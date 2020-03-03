@@ -1,8 +1,6 @@
-FROM ubuntu:16.04
+FROM alpine:3.7
 
-RUN apt-get update && \
-    apt-get install -y curl make && \
-    apt-get clean
+RUN apk add curl make
 
 RUN curl -Lo /usr/bin/jfrog https://api.bintray.com/content/jfrog/jfrog-cli-go/\$latest/jfrog-cli-linux-amd64/jfrog?bt_package=jfrog-cli-linux-amd64
 RUN chmod +x /usr/bin/jfrog
